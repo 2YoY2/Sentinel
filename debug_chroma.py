@@ -1,0 +1,10 @@
+import chromadb
+print("Initializing Chroma...")
+client = chromadb.Client()
+print("Chroma initialized.")
+collection = client.get_or_create_collection("test")
+print("Collection created.")
+collection.add(documents=["hello"], ids=["1"])
+print("Added document.")
+print(collection.query(query_texts=["hello"], n_results=1))
+print("Done.")

@@ -1,0 +1,27 @@
+# SFR SENTINEL TECHNICAL KNOWLEDGE BASE
+
+## ISSUE 101: Slow Internet (General)
+If a customer reports slow internet, check the signal strength.
+If signal < -80dBm, it is a coverage issue. Suggest a repeater.
+If signal is good, ask to restart the box.
+
+## ISSUE 105: Slow Internet in Zone B
+Zone B has old infrastructure.
+A common cause is OUTDATED FIRMWARE on the router.
+Fix: Schedule a remote firmware update to version v2.0.
+Also, check for "packet loss" in the logs.
+
+## ISSUE 202: No Internet / Red Light
+If the optical box shows a RED LIGHT, it means no signal from the street.
+This usually means a cut cable or a disconnected patch cord.
+Action: Schedule a level 2 technician intervention.
+
+## ISSUE 303: TV Box Freezing
+If the TV image freezes, check the HDMI cable.
+If passing through a switch, remove the switch.
+Reset the TV decoder by holding the button for 10 seconds.
+
+## ISSUE 404: WiFi Drops
+Interference from microwave ovens or neighbor networks can cause drops.
+Change the WiFi channel to 1, 6, or 11.
+Switch to 5GHz band if close to the router.

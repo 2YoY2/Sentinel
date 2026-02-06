@@ -1,0 +1,8 @@
+pandas
+faker
+numpy
+chromadb
+sentence-transformers
+fastapi
+uvicorn
+mcp[cli]

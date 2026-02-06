@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentinel-agent
+spec:
+  replicas: 1  # Start with 1 instance. SFR might run 100.
+  selector:
+    matchLabels:
+      app: sentinel
+  template:
+    metadata:
+      labels:
+        app: sentinel
+    spec:
+      containers:
+      - name: sentinel-container
+        image: sentinel-agent:latest
+        imagePullPolicy: Never # Use the local image we built
+        ports:
+        - containerPort: 8000
+        env:
+        # Example of securely injecting secrets (OpenAI Key not actually used yet but good practice)
+        - name: OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: sentinel-secrets
+              key: openai-api-key
+              optional: true # Make optional so it doesn't crash if secret missing
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sentinel-service
+spec:
+  type: NodePort # Exposes it to your laptop
+  selector:
+    app: sentinel
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 30007 # You will access the API at localhost:30007
