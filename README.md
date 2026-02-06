@@ -34,16 +34,16 @@ The system follows a **Micro-Agent Pattern** using the Model Context Protocol (M
 
 ```mermaid
 graph TD
-    User[User / API Client] -->|HTTP POST| API[FastAPI Gateway]
-    API -->|Async Call| Sup[Supervisor Agent]
+    User["User / API Client"] -->|"HTTP POST"| API["FastAPI Gateway"]
+    API -->|"Async Call"| Sup["Supervisor Agent"]
     
     subgraph "MCP Ecosystem"
-        Sup -->|JSON-RPC (stdio)| Bill[Billing Server Process]
-        Sup -->|JSON-RPC (stdio)| Tech[Technical Server Process]
+        Sup -->|"JSON-RPC (stdio)"| Bill["Billing Server Process"]
+        Sup -->|"JSON-RPC (stdio)"| Tech["Technical Server Process"]
     end
     
-    Bill -->|SQL/Pandas| DB[(Billing Data)]
-    Tech -->|Vector Search| KB[(ChromaDB Knowledge Base)]
+    Bill -->|"SQL/Pandas"| DB[("Billing Data")]
+    Tech -->|"Vector Search"| KB[("ChromaDB Knowledge Base")]
 ```
 
 ---
@@ -134,6 +134,3 @@ Sentinel/
 ├── Dockerfile              # Container Recipe
 └── requirements.txt        # Python Dependencies
 ```
-
----
-*Built for SFR Interview - "Chef de Projet IA & GenAI"*
