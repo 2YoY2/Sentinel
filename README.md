@@ -3,6 +3,8 @@
 **Sentinel** is an advanced Multi-Agent System designed to autonomously detect anomalies and resolve technical incidents in a Telecom environment.
 Built with **FastAPI**, **RAG (Retrieval-Augmented Generation)**, and the **Model Context Protocol (MCP)**, it demonstrates a cutting-edge "Agentic Workflow" where intelligence is decoupled from tooling.
 
+Repository: [https://github.com/2YoY2/Sentinel](https://github.com/2YoY2/Sentinel)
+
 ---
 
 ## 🚀 Key Features
